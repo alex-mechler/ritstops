@@ -1,0 +1,27 @@
+{
+  "name": "ritstops",
+  "version": "1.0.0",
+  "description": "A user-reported list of Pokemon Go Stops at RIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex-mechler/ritstops.git"
+  },
+  "author": "Alexander Mechler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alex-mechler/ritstops/issues"
+  },
+  "homepage": "https://github.com/alex-mechler/ritstops#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.6"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.13"
+  }
+}
