@@ -12,6 +12,8 @@ pool.on('error', (err, client) => {
   process.exit(-1)
 })
 
+pool.setMaxListeners(0);
+
 module.exports = {
 	query: (text, params) => pool.query(text, params)
 }
