@@ -23,7 +23,6 @@ router.post('/', async(req, res) => {
 	const name = req.body.name;
 	const lat = Number(req.body.lat);
 	const long = Number(req.body.long);
-	console.log(long);
 	if(name == undefined) {
 		res.send({err: true, message: 'Invalid name', result: {}});
 		return;

@@ -11,6 +11,9 @@ app.use('/api/research', research);
 const stop = require('./api/routes/stop');
 app.use('/api/stop', stop);
 
+const quest = require('./api/routes/quest');
+app.use('/api/quest', quest);
+
 app.listen(port);
 
-console.log('todo list RESTful API server started on: ' + port);
+console.log('Stop Map RESTful API server started on: ' + port);
