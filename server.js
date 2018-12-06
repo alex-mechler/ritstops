@@ -76,9 +76,9 @@ app.get('/api/auth/logout', function(req, res) {
 	res.redirect('/');
 });
 
-app.get('/api/auth/user', function(req, res)){
+app.get('/api/auth/user', function(req, res) {
 	res.send(req.user);
-};
+});
 
 app.listen(port);
 
