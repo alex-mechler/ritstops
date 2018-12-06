@@ -55,7 +55,21 @@ app.use('/api/quest', quest);
 app.get('/api/auth/login', passport.authenticate('discord', {scope: scopes}), function(req, res) {});
 app.get('/api/auth/callback', 
 	passport.authenticate('discord', {failureRedirect: '/'}),
-	function(req, res) {res.redirect('/')}
+	function(req, res) {
+		const guilds = req.user.guilds;
+		var foundGuild = false;
+		for(i in guilds){
+			if(guilds[i].id == process.env.DISCORD_SERVER_ID){
+				foundGuild = true;
+			}
+		}
+		if(foundGuild == true){
+			res.redirect(process.env.LOGIN_SUCCESS_REDIRECT);
+		}else{
+			req.logout();
+			res.redirect(process.env.LOGIN_FAIL_REDIRECT);
+		}
+	}
 );
 app.get('/api/auth/logout', function(req, res) {
 	req.logout();
