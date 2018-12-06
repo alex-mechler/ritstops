@@ -6,6 +6,7 @@ var express = require('express'),
 var session = require('express-session');
 var passport = require('passport');
 var DiscordStrategy = require('passport-discord').Strategy;
+var pgSession = require('connect-pg-simple')(session);
 
 passport.serializeUser(function(user, done) {
 	done(null, user);
@@ -28,9 +29,13 @@ passport.use(new DiscordStrategy({
 }));
 
 app.use(session({
+	store: new pgSession({
+		pool: require('./api/util/db').pool
+	}),
 	secret: process.env.COOKIE_SECRET,
 	resave: false,
-	saveUninitialized: false
+	saveUninitialized: false,
+	cookie: {maxAge: 30 * 24 * 60 * 60 * 10000}
 }));
 
 app.use(passport.initialize());

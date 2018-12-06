@@ -15,5 +15,6 @@ pool.on('error', (err, client) => {
 pool.setMaxListeners(0);
 
 module.exports = {
-	query: (text, params) => pool.query(text, params)
+	query: (text, params) => pool.query(text, params),
+	pool: pool
 }
