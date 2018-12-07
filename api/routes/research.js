@@ -6,7 +6,7 @@ const router = new Router();
 module.exports = router;
 
 router.get('/', async(req, res) =>{
-	const {rows} = await db.query('SELECT stop.name, stop.loc, quest.reward, quest.quest, stop.confirmed FROM stop JOIN quest ON stop.quest_id = quest.id');
+	const {rows} = await db.query('SELECT stop.name, stop.loc, quest.reward, quest.quest, stop.confirmed, quest.icon FROM stop JOIN quest ON stop.quest_id = quest.id');
   res.send({err: false, message: '', result: rows});
 });
 
