@@ -301,130 +301,161 @@ var stops = [
 quests = [
   {
     "reward": "Unchecked",
-    "quest": "???"
+    "quest": "???",
+    "icon": "icon_unchecked"
   },
   {
     "reward": "Trash",
-    "quest": "Berries/Balls/SD"
+    "quest": "Berries/Balls/SD",
+    "icon": "icon_trash"
   },
   {
     "reward": "1000+ SD",
-    "quest": "Various"
+    "quest": "Various",
+    "icon": "icon_stardust"
   },
   {
     "reward": "3 Silver Pinaps",
-    "quest": "Power Up Pokemon 10 Times"
+    "quest": "Power Up Pokemon 10 Times",
+    "icon": "icon_silver_pinap"
   },
   {
     "reward": "Golden Razz(s)",
-    "quest": "Various"
+    "quest": "Various",
+    "icon": "icon_golden_razzberry"
   },
   {
     "reward": "Rare Candy",
-    "quest": "Various"
+    "quest": "Various",
+    "icon": "icon_rare_candy"
   },
   {
     "reward": "Spinda #6",
-    "quest": "Make a Great Curveball Throw"
+    "quest": "Make a Great Curveball Throw",
+    "icon": "icon_spinda"
   },
   {
     "reward": "Voltorb",
-    "quest": "Make 5 Nice Throws"
+    "quest": "Make 5 Nice Throws",
+    "icon": "icon_voltorb"
   },
   {
     "reward": "Gastly",
-    "quest": "Make 3 Great Throws"
+    "quest": "Make 3 Great Throws",
+    "icon": "icon_gastly"
   },
   {
     "reward": "Onix",
-    "quest": "Make 3 Great Throws in a row"
+    "quest": "Make 3 Great Throws in a row",
+    "icon": "icon_onix"
   },
   {
     "reward": "Golduck",
-    "quest": "Make 3 Curveball Throws in a row"
+    "quest": "Make 3 Curveball Throws in a row",
+    "icon": "icon_golduck"
   },
   {
     "reward": "Larvitar",
-    "quest": "Make 3 Excellent Throws in a row"
+    "quest": "Make 3 Excellent Throws in a row",
+    "icon": "icon_larvitar"
   },
   {
     "reward": "Kanto Starter",
-    "quest": "Win a Gym Battle"
+    "quest": "Win a Gym Battle",
+    "icon": "icon_kanto_starter"
   },
   {
     "reward": "Jynx",
-    "quest": "Win 3 Gym Battles"
+    "quest": "Win 3 Gym Battles",
+    "icon": "icon_jynx"
   },
   {
     "reward": "Porygon",
-    "quest": "Win a Raid"
+    "quest": "Win a Raid",
+    "icon": "icon_porygon"
   },
   {
     "reward": "Mankey",
-    "quest": "Battle in a Gym"
+    "quest": "Battle in a Gym",
+    "icon": "icon_mankey"
   },
   {
     "reward": "Machop",
-    "quest": "Battle in a Gym 5 times"
+    "quest": "Battle in a Gym 5 times",
+    "icon": "icon_machop"
   },
   {
     "reward": "Electabuzz",
-    "quest": "User a supereffective Charged attack in 7 Gym battles"
+    "quest": "User a supereffective Charged attack in 7 Gym battles",
+    "icon": "icon_electrabuzz"
   },
   {
     "reward": "Eevee",
-    "quest": "Evolve a Pokemon"
+    "quest": "Evolve a Pokemon",
+    "icon": "icon_eevee"
   },
   {
     "reward": "Feebas",
-    "quest": "Trade a Pokemon"
+    "quest": "Trade a Pokemon",
+    "icon": "icon_feebas"
   },
   {
     "reward": "Misdreavus",
-    "quest": "Transfer 10 Pokemon"
+    "quest": "Transfer 10 Pokemon",
+    "icon": "icon_misdreavus"
   },
   {
     "reward": "Dratini",
-    "quest": "Catch a Dragon-type Pokemon"
+    "quest": "Catch a Dragon-type Pokemon",
+    "icon": "icon_dratini"
   },
   {
     "reward": "Numel",
-    "quest": "Catch 3 Grass- Water- or Fire-type Pokemon"
+    "quest": "Catch 3 Grass- Water- or Fire-type Pokemon",
+    "icon": "icon_numel"
   },
   {
     "reward": "Vulpix/Poliwag",
-    "quest": "Catch 5 Pokemon with Weather Boost"
+    "quest": "Catch 5 Pokemon with Weather Boost",
+    "icon": "icon_vulpix_poliwag"
   },
   {
     "reward": "Magikarp",
-    "quest": "Catch 10 Pokemon"
+    "quest": "Catch 10 Pokemon",
+    "icon": "icon_magikarp"
   },
   {
     "reward": "Exeggcute/Lanturn",
-    "quest": "Hatch an Egg"
+    "quest": "Hatch an Egg",
+    "icon": "icon_exeggcute_lanturn"
   },
   {
     "reward": "Magmar",
-    "quest": "Hatch 3 Eggs"
+    "quest": "Hatch 3 Eggs",
+    "icon": "icon_magmar"
   },
   {
     "reward": "Chansey",
-    "quest": "Hatch 5 Eggs"
+    "quest": "Hatch 5 Eggs",
+    "icon": "icon_chansey"
   },
   {
     "reward": "Kanto Starter",
-    "quest": "Power up Pokemon 5 Times"
+    "quest": "Power up Pokemon 5 Times",
+    "icon": "icon_kanto_starter"
   }
 ];
 
 createTables();
 
 async function createTables(){
-	await db.query("CREATE TABLE quest (id SERIAL PRIMARY KEY, reward VARCHAR(50), quest VARCHAR(100))");
+	await db.query("CREATE TABLE quest (id SERIAL PRIMARY KEY, reward VARCHAR(50), quest VARCHAR(100), icon VARCHAR(100))");
 	await db.query("CREATE TABLE stop (id SERIAL PRIMARY KEY, name VARCHAR(50), loc POINT, quest_id INT DEFAULT 1, confirmed BOOLEAN DEFAULT FALSE, FOREIGN KEY (quest_id) REFERENCES quest(id))");
+	await db.query("CREATE TABLE session (sid varchar NOT NULL COLLATE default, sess json NOT NULL, expire timestamp(6) NOT NULL) WITH (OIDS=FALSE)");
+	await db.query("ALTER TABLE session ADD CONSTRAINT session_pkey PRIMARY KEY (sid) NOT DEFERRABLE INITIALLY IMMEDIATE");
 	console.log("Tables Created");
 	for(i in quests){
-		await db.query("INSERT INTO quest (reward, quest) VALUES ($1, $2)", [quests[i]['reward'], quests[i]['quest']]);
+		await db.query("INSERT INTO quest (reward, quest, icon) VALUES ($1, $2, $3)", [quests[i]['reward'], quests[i]['quest']], quests[i]['icon']);
 	}
 	console.log("Quests Imported");
 	for(i in stops){
