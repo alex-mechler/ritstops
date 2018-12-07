@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const db = require('./api/util/db.js');
 
 var stops = [
