@@ -19,6 +19,7 @@ router.get('/:id', async(req, res) => {
 	}
 });
 
+/*
 router.post('/', async(req, res) => {
 	const reward = req.body.reward;
 	const quest = req.body.quest;
@@ -39,3 +40,4 @@ router.post('/', async(req, res) => {
 	var {rows} = await db.query('SELECT id, reward, quest FROM quest WHERE quest = $1', [quest]);
 	res.send({err: false, message: '', result: rows});
 });
+*/

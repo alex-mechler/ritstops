@@ -1,6 +1,8 @@
 const Router = require('express-promise-router');
 
 const db = require('../util/db');
+const auth = require('../util/auth');
+
 const router = new Router();
 
 module.exports = router;
@@ -10,7 +12,7 @@ router.get('/', async(req, res) =>{
   res.send({err: false, message: '', result: rows});
 });
 
-router.post('/', async(req, res) => {
+router.post('/', auth.isLoggedIn, async(req, res) => {
 	const stop = req.body.stop;
 	const quest = req.body.quest;
 	var {rows} = await db.query('SELECT COUNT(id) FROM stop WHERE id = $1', [stop]);

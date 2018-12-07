@@ -19,6 +19,7 @@ router.get('/:id', async(req, res) => {
 	}
 });
 
+/*
 router.post('/', async(req, res) => {
 	const name = req.body.name;
 	const lat = Number(req.body.lat);
@@ -44,3 +45,4 @@ router.post('/', async(req, res) => {
 	var {rows} = await db.query('SELECT id, name, loc FROM stop WHERE name = $1', [name]);
 	res.send({err: false, message: '', result: rows});
 });
+*/
