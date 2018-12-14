@@ -7,6 +7,8 @@ var session = require('express-session');
 var passport = require('passport');
 var DiscordStrategy = require('passport-discord').Strategy;
 var pgSession = require('connect-pg-simple')(session);
+var cron = require('node-cron');
+const db = require('./api/util/db');
 
 passport.serializeUser(function(user, done) {
 	done(null, user);
@@ -35,7 +37,7 @@ app.use(session({
 	secret: process.env.COOKIE_SECRET,
 	resave: false,
 	saveUninitialized: false,
-	cookie: {maxAge: 30 * 24 * 60 * 60 * 10000}
+	cookie: {maxAge: 30 * 24 * 60 * 60 * 10000, domain: process.env.COOKE_DOMAIN}
 }));
 
 app.use(passport.initialize());
