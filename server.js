@@ -19,6 +19,13 @@ passport.deserializeUser(function(obj, done) {
 
 var scopes = ['identify', 'email', 'guilds'];
 
+cron.schedule('0 0 * * *', () => {
+  console.log('Resetting the stops');
+	db.query('UPDATE stop SET quest_id=1, confirmed=false');
+}, {
+   timezone: process.env.TIMEZONE
+});
+
 passport.use(new DiscordStrategy({
 	clientID: process.env.DISCORD_CLIENT_ID,
 	clientSecret: process.env.DISCORD_CLIENT_SECRET,
