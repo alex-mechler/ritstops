@@ -8,13 +8,20 @@ var passport = require('passport');
 var DiscordStrategy = require('passport-discord').Strategy;
 var pgSession = require('connect-pg-simple')(session);
 var cron = require('node-cron');
+var hat = require('hat');
+var rack = hat.rack();
 const db = require('./api/util/db');
 
 passport.serializeUser(function(user, done) {
 	done(null, user);
 });
-passport.deserializeUser(function(obj, done) {
-	done(null, obj);
+passport.deserializeUser(async function(obj, done) {
+	const {rows} = await db.query("SELECT * FROM discord_user WHERE email=$1", [obj.email]);
+	if(rows.length == 1){
+		done(null, rows[0]);
+		return;
+	}
+	done({message: 'test'}, null);
 });
 
 var scopes = ['identify', 'email', 'guilds'];
@@ -64,7 +71,7 @@ app.use('/api/quest', quest);
 app.get('/api/auth/login', passport.authenticate('discord', {scope: scopes}), function(req, res) {});
 app.get('/api/auth/callback', 
 	passport.authenticate('discord', {failureRedirect: '/'}),
-	function(req, res) {
+	async function(req, res) {
 		const guilds = req.user.guilds;
 		var foundGuild = false;
 		for(i in guilds){
@@ -73,6 +80,13 @@ app.get('/api/auth/callback',
 			}
 		}
 		if(foundGuild == true){
+			const {rowCount} = await db.query("SELECT * FROM discord_user WHERE email=$1", [req.user.email]);
+			if(rowCount == 0){
+				var key = rack();
+				await db.query("INSERT INTO discord_user (email, username, api_key, avatar, permissions) VALUES ($1, $2, $3, $4, 0)", [req.user.email, req.user.username, key, req.user.avatar]);
+			} else {
+				await db.query("UPDATE discord_user SET avatar=$1 WHERE email=$2", [req.user.avatar, req.user.email]);
+			}
 			res.redirect(process.env.LOGIN_SUCCESS_REDIRECT);
 		}else{
 			req.logout();
