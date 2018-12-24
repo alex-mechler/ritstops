@@ -72,6 +72,7 @@ const user = require('./api/routes/user');
 app.use('/api/user', user);
 
 app.get('/api/auth/login', passport.authenticate('discord', {scope: scopes}), function(req, res) {});
+
 app.get('/api/auth/callback', 
 	passport.authenticate('discord', {failureRedirect: '/'}),
 	async function(req, res) {
@@ -97,13 +98,10 @@ app.get('/api/auth/callback',
 		}
 	}
 );
+
 app.get('/api/auth/logout', function(req, res) {
 	req.logout();
 	res.redirect('/');
-});
-
-app.get('/api/auth/user', function(req, res) {
-	res.send(req.user);
 });
 
 app.listen(port);
