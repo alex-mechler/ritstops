@@ -13,7 +13,7 @@ router.get('/', async(req, res) => {
 router.get('/:id', async(req, res) => {
 	const {rows} = await db.query('SELECT id, reward, quest, icon FROM quest WHERE id = $1', [req.params.id]);
 	if(rows.length == 1) {
-		res.send({err: true, message: '', result: rows});
+		res.send({err: false, message: '', result: rows});
 	} else {
 		res.send({err: true, message: 'No such quest', result: {}});
 	}

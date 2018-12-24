@@ -68,6 +68,9 @@ app.use('/api/stop', stop);
 const quest = require('./api/routes/quest');
 app.use('/api/quest', quest);
 
+const user = require('./api/routes/user');
+app.use('/api/user', user);
+
 app.get('/api/auth/login', passport.authenticate('discord', {scope: scopes}), function(req, res) {});
 app.get('/api/auth/callback', 
 	passport.authenticate('discord', {failureRedirect: '/'}),
