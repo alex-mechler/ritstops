@@ -213,7 +213,7 @@ quests = [
 updateQuests();
 
 async function updateQuests(){
-  await db.query("DROP TABLE quest");
+  await db.query("DELETE FROM quest");
 	await db.query("CREATE TABLE quest (id SERIAL PRIMARY KEY, reward VARCHAR(50), quest VARCHAR(100), icon VARCHAR(100))");
 	for(i in quests){
 		await db.query("INSERT INTO quest (reward, quest, icon) VALUES ($1, $2, $3)", [quests[i]['reward'], quests[i]['quest'], quests[i]['icon']]);
