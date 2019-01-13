@@ -338,12 +338,12 @@ quests = [
   },
   {
     "reward": "Anorith",
-    "quest": "Catch 7 Flying",
+    "quest": "Catch 7 Flying Psychic or Dark-type Pokemon",
     "icon": "Psychic"
   },
   {
     "reward": "Starmie",
-    "quest": "Catch 5 Electric",
+    "quest": "Catch 5 Electric Normal or Posion-type Pokemon",
     "icon": "Normal"
   },
   {
