@@ -517,6 +517,7 @@ async function updateQuests(){
 	for(i in quests){
 		await db.query("INSERT INTO quest (reward, quest, icon) VALUES ($1, $2, $3)", [quests[i]['reward'], quests[i]['quest'], quests[i]['icon']]);
 	}
+  console.log("Quests Imported");
   for(i in stops){
     await db.query("INSERT INTO stop (name, loc) VALUES ($1, point($2, $3))", [stops[i]['name'], stops[i]['lat'], stops[i]['long']]);
   }
