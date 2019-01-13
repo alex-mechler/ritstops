@@ -317,94 +317,64 @@ quests = [
     "icon": "icon_stardust"
   },
   {
-    "reward": "3 Silver Pinaps",
-    "quest": "Power Up Pokemon 10 Times",
-    "icon": "icon_silver_pinap"
-  },
-  {
-    "reward": "Golden Razz(s)",
-    "quest": "Various",
-    "icon": "icon_golden_razzberry"
-  },
-  {
     "reward": "Rare Candy",
     "quest": "Various",
     "icon": "icon_rare_candy"
   },
   {
-    "reward": "Spinda #6",
-    "quest": "Make a Great Curveball Throw",
-    "icon": "icon_spinda"
+    "reward": "Golden Razz Berry",
+    "quest": "Various",
+    "icon": "icon_golden_razzberry"
   },
   {
-    "reward": "Voltorb",
-    "quest": "Make 5 Nice Throws",
-    "icon": "icon_voltorb"
+    "reward": "5 Silver Pinaps",
+    "quest": "Catch 3 Grass Water or Fire-type Pokemon / Spin 10 Pokestops or Gyms",
+    "icon": "icon_silver_pinap"
   },
   {
-    "reward": "Gastly",
-    "quest": "Make 3 Great Throws",
-    "icon": "icon_gastly"
+    "reward": "Cubone",
+    "quest": "Use 5 Razz Berries to Help Catch Pokemon",
+    "icon": "icon_cubone"
   },
   {
-    "reward": "Onix",
-    "quest": "Make 3 Great Throws in a row",
-    "icon": "icon_onix"
+    "reward": "Anorith",
+    "quest": "Catch 7 Flying",
+    "icon": "Psychic"
   },
   {
-    "reward": "Golduck",
-    "quest": "Make 3 Curveball Throws in a row",
-    "icon": "icon_golduck"
+    "reward": "Starmie",
+    "quest": "Catch 5 Electric",
+    "icon": "Normal"
   },
   {
-    "reward": "Larvitar",
-    "quest": "Make 3 Excellent Throws in a row",
-    "icon": "icon_larvitar"
+    "reward": "Kabuto",
+    "quest": "Catch 10 Ice-type Pokemon",
+    "icon": "icon_kabuto"
   },
   {
-    "reward": "Kanto Starter",
-    "quest": "Win a Gym Battle",
-    "icon": "icon_kanto_starter"
+    "reward": "Sandshrew",
+    "quest": "Catch 10 Ground-type Pokemon",
+    "icon": "icon_sandshrew"
   },
   {
-    "reward": "Jynx",
-    "quest": "Win 3 Gym Battles",
-    "icon": "icon_jynx"
+    "reward": "Magnemite",
+    "quest": "Catch 5 Fighting-type Pokemon",
+    "icon": "icon_magnemite"
   },
   {
-    "reward": "Porygon",
-    "quest": "Win a Raid",
-    "icon": "icon_porygon"
+    "reward": "Magikarp",
+    "quest": "Use 10 Pinap Berries While Catching Pokemon",
+    "icon": "icon_magikarp"
   },
   {
-    "reward": "Mankey",
-    "quest": "Battle in a Gym",
-    "icon": "icon_mankey"
+    "reward": "Magikarp / Houndour",
+    "quest": "Catch 10 Pokemon",
+    "icon": "icon_grass"
   },
   {
-    "reward": "Machop",
-    "quest": "Battle in a Gym 5 times",
-    "icon": "icon_machop"
-  },
-  {
-    "reward": "Electabuzz",
-    "quest": "User a supereffective Charged attack in 7 Gym battles",
-    "icon": "icon_electrabuzz"
-  },
-  {
-    "reward": "Eevee",
-    "quest": "Evolve a Pokemon",
-    "icon": "icon_eevee"
-  },
-  {
-    "reward": "Feebas",
-    "quest": "Trade a Pokemon",
-    "icon": "icon_feebas"
-  },
-  {
-    "reward": "Misdreavus",
-    "quest": "Transfer 10 Pokemon",
-    "icon": "icon_misdreavus"
+    "reward": "Poliwag / Vulpix",
+    "quest": "Catch 5 Pokemon with Weather Boost",
+    "icon": "icon_grass"
   },
   {
     "reward": "Dratini",
@@ -412,24 +382,49 @@ quests = [
     "icon": "icon_dratini"
   },
   {
-    "reward": "Numel",
-    "quest": "Catch 3 Grass- Water- or Fire-type Pokemon",
-    "icon": "icon_numel"
+    "reward": "Growlithe",
+    "quest": "Use 5 Berries to Help Catch Pokemon",
+    "icon": "icon_growlithe"
   },
   {
-    "reward": "Vulpix/Poliwag",
-    "quest": "Catch 5 Pokemon with Weather Boost",
-    "icon": "icon_vulpix_poliwag"
+    "reward": "Aerodactyl",
+    "quest": "Use an Item to Evolve a Pokemon",
+    "icon": "icon_aerodactyl"
   },
   {
-    "reward": "Magikarp",
-    "quest": "Catch 10 Pokemon",
-    "icon": "icon_magikarp"
+    "reward": "Eevee / Sunkern",
+    "quest": "Evolve a Pokemon",
+    "icon": "icon_grass"
   },
   {
-    "reward": "Exeggcute/Lanturn",
+    "reward": "Kanto Starter",
+    "quest": "Power Up a Pokemon 5 Times",
+    "icon": "icon_grass"
+  },
+  {
+    "reward": "Vulpix",
+    "quest": "Transfer 3 Pokemon",
+    "icon": "icon_vulpix"
+  },
+  {
+    "reward": "Manetric",
+    "quest": "Trade a Pokemon",
+    "icon": "icon_manetric"
+  },
+  {
+    "reward": "Tentacruel",
+    "quest": "Earn 5 Candies Walking with Your Buddy",
+    "icon": "icon_tentacruel"
+  },
+  {
+    "reward": "Gastly",
+    "quest": "Send 2 Gifts to Friends",
+    "icon": "icon_gastly"
+  },
+  {
+    "reward": "Exeggcute / Snubbull",
     "quest": "Hatch an Egg",
-    "icon": "icon_exeggcute_lanturn"
+    "icon": "icon_grass"
   },
   {
     "reward": "Magmar",
@@ -442,9 +437,74 @@ quests = [
     "icon": "icon_chansey"
   },
   {
+    "reward": "Aerodactyl",
+    "quest": "Win 5 Raids",
+    "icon": "icon_aerodactyl"
+  },
+  {
+    "reward": "Lapras",
+    "quest": "Win 5 Gym Battles",
+    "icon": "icon_lapras"
+  },
+  {
+    "reward": "Mankey / Machop",
+    "quest": "Battle in a Gym",
+    "icon": "icon_mankey"
+  },
+  {
+    "reward": "Machop",
+    "quest": "Battle in a Gym 5 Times",
+    "icon": "icon_machop"
+  },
+  {
     "reward": "Kanto Starter",
-    "quest": "Power up Pokemon 5 Times",
-    "icon": "icon_kanto_starter"
+    "quest": "Win a Gym Battle",
+    "icon": "icon_grass"
+  },
+  {
+    "reward": "Electabuzz",
+    "quest": "User a Super Effective Charged Attack in a Gym Battle 7 Times",
+    "icon": "icon_electrabuzz"
+  },
+  {
+    "reward": "Jynx",
+    "quest": "Win 3 Gym Battles",
+    "icon": "icon_jynx"
+  },
+  {
+    "reward": "Drowzee",
+    "quest": "Battle in a Raid",
+    "icon": "icon_drowzee"
+  },
+  {
+    "reward": "Omanyte / Kabuto",
+    "quest": "Win a Level 3 or Higher Raid",
+    "icon": "icon_grass"
+  },
+  {
+    "reward": "Gastly / Lileep / Anorith",
+    "quest": "Make 3 Great Throws",
+    "icon": "icon_grass"
+  },
+  {
+    "reward": "Spinda",
+    "quest": "Make 5 Great Curveball Throws in a Row",
+    "icon": "icon_spinda"
+  },
+  {
+    "reward": "Bidoof",
+    "quest": "Make 5 Nice Throws",
+    "icon": "icon_bidoof"
+  },
+  {
+    "reward": "Onix",
+    "quest": "Make 3 Great Throws in a Row",
+    "icon": "icon_onix"
+  },
+  {
+    "reward": "Larvitar",
+    "quest": "Make 3 Excellent Throws in a Row",
+    "icon": "icon_larvitar"
   }
 ];
 
@@ -455,7 +515,7 @@ async function createTables(){
 	await db.query("CREATE TABLE stop (id SERIAL PRIMARY KEY, name VARCHAR(50), loc POINT, quest_id INT DEFAULT 1, confirmed BOOLEAN DEFAULT FALSE, FOREIGN KEY (quest_id) REFERENCES quest(id))");
 	await db.query("CREATE TABLE session (sid varchar NOT NULL COLLATE \"default\", sess json NOT NULL, expire timestamp(6) NOT NULL) WITH (OIDS=FALSE)");
 	await db.query("ALTER TABLE session ADD CONSTRAINT \"session_pkey\" PRIMARY KEY (sid) NOT DEFERRABLE INITIALLY IMMEDIATE");
-	await db.query("CREATE TABLE discord_user (email VARCHAR(50) PRIMARY KEY, username VARCHAR(50) NOT NULL, api_key CHAR(32) NOT NULL, avatar CHAR(32), preferences JSONB, score INT DEFAULT 0, donation_amount INT DEFAULT 0, permissions INT DEFAULT 0)");
+	await db.query("CREATE TABLE discord_user (email VARCHAR(50) PRIMARY KEY, username VARCHAR(50) NOT NULL, api_key CHAR(32) NOT NULL, avatar CHAR(32), preferences JSONB, score INT DEFAULT 0, donation_amount INT DEFAULT 0, permissions BIGINT DEFAULT 0)");
 	console.log("Tables Created");
 	for(i in quests){
 		await db.query("INSERT INTO quest (reward, quest, icon) VALUES ($1, $2, $3)", [quests[i]['reward'], quests[i]['quest'], quests[i]['icon']]);
