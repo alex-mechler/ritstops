@@ -407,9 +407,9 @@ quests = [
     "icon": "icon_vulpix"
   },
   {
-    "reward": "Manetric",
+    "reward": "Manectric",
     "quest": "Trade a Pokemon",
-    "icon": "icon_manetric"
+    "icon": "icon_manectric"
   },
   {
     "reward": "Tentacruel",
