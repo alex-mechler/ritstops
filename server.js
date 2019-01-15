@@ -87,7 +87,7 @@ app.get('/*/auth/callback',
 			const {rowCount} = await db.query("SELECT * FROM discord_user WHERE email=$1", [req.user.email]);
 			if(rowCount == 0){
 				var key = rack();
-				await db.query("INSERT INTO discord_user (email, username, discord_id, api_key, avatar, permissions) VALUES ($1, $2, $3, $4, $5, 0)", [req.user.email, req.user.username, req.user.id, key, req.user.avatar]);
+				await db.query("INSERT INTO discord_user (email, username, discord_id, api_key, avatar) VALUES ($1, $2, $3, $4, $5)", [req.user.email, req.user.username, req.user.id, key, req.user.avatar]);
 			} else {
 				await db.query("UPDATE discord_user SET avatar=$1 WHERE email=$2", [req.user.avatar, req.user.email]);
 			}
