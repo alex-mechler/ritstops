@@ -60,20 +60,20 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 const research = require('./api/routes/research');
-app.use('/api/research', research);
+app.use('/*/research', research);
 
 const stop = require('./api/routes/stop');
-app.use('/api/stop', stop);
+app.use('/*/stop', stop);
 
 const quest = require('./api/routes/quest');
-app.use('/api/quest', quest);
+app.use('/*/quest', quest);
 
 const user = require('./api/routes/user');
-app.use('/api/user', user);
+app.use('/*/user', user);
 
-app.get('/api/auth/login', passport.authenticate('discord', {scope: scopes}), function(req, res) {});
+app.get('/*/auth/login', passport.authenticate('discord', {scope: scopes}), function(req, res) {});
 
-app.get('/api/auth/callback', 
+app.get('/*/auth/callback', 
 	passport.authenticate('discord', {failureRedirect: '/'}),
 	async function(req, res) {
 		const guilds = req.user.guilds;
@@ -99,7 +99,7 @@ app.get('/api/auth/callback',
 	}
 );
 
-app.get('/api/auth/logout', function(req, res) {
+app.get('/*/auth/logout', function(req, res) {
 	req.logout();
 	res.redirect('/');
 });
