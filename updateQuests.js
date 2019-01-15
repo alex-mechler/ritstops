@@ -505,6 +505,21 @@ quests = [
     "reward": "Larvitar",
     "quest": "Make 3 Excellent Throws in a Row",
     "icon": "icon_larvitar"
+  },
+  {
+    "reward": "1000 SD",
+    "quest": "Hoenn Celebration: Catch 10 Zigzagoon or Taillow",
+    "icon": "icon_stardust"
+  },
+  {
+    "reward": "Nosepass",
+    "quest": "Hoenn Celebration: Hatch 2 Eggs",
+    "icon": "icon_nosepass"
+  },
+  {
+    "reward": "Trapinch",
+    "quest": "Hoenn Celebration: Evolve 3 Wurmple",
+    "icon": "icon_trapinch"
   }
 ];
 
