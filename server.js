@@ -59,8 +59,8 @@ app.use(passport.session());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-const research = require('./api/routes/research');
-app.use('/*/research', research);
+//const research = require('./api/routes/research');
+//app.use('/*/research', research);
 
 const stop = require('./api/routes/stop');
 app.use('/*/stop', stop);
