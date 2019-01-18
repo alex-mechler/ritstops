@@ -59,9 +59,6 @@ app.use(passport.session());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-//const research = require('./api/routes/research');
-//app.use('/*/research', research);
-
 const stop = require('./api/routes/stop');
 app.use('/*/stop', stop);
 
@@ -70,6 +67,9 @@ app.use('/*/quest', quest);
 
 const reward = require('./api/routes/reward');
 app.use('/*/reward', reward);
+
+const quest_reward = require('./api/routes/quest_reward');
+app.use('/*/quest_reward', quest_reward);
 
 const user = require('./api/routes/user');
 app.use('/*/user', user);
