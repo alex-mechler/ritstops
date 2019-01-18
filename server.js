@@ -28,7 +28,7 @@ var scopes = ['identify', 'email', 'guilds'];
 
 cron.schedule('0 0 * * *', () => {
   console.log('Resetting the stops');
-	db.query('UPDATE stop SET quest_id=1, confirmed=false');
+	db.query('DELETE FROM report');
 }, {
    timezone: process.env.TIMEZONE
 });
