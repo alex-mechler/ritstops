@@ -68,6 +68,9 @@ app.use('/*/stop', stop);
 const quest = require('./api/routes/quest');
 app.use('/*/quest', quest);
 
+const reward = require('./api/routes/reward');
+app.use('/*/reward', reward);
+
 const user = require('./api/routes/user');
 app.use('/*/user', user);
 
