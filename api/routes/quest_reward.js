@@ -15,6 +15,6 @@ router.get('/:id', async(req, res) => {
 	if(rows.length == 1) {
 		res.send({err: false, message: '', result: rows});
 	} else {
-		res.send({err: true, message: 'No such quest', result: {}});
+		res.send({err: true, message: 'No such quest_reward', result: {}});
 	}
 });

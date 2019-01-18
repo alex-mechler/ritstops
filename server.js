@@ -71,6 +71,9 @@ app.use('/*/reward', reward);
 const quest_reward = require('./api/routes/quest_reward');
 app.use('/*/quest_reward', quest_reward);
 
+const report = require('./api/routes/report');
+app.use('/*/report', report);
+
 const user = require('./api/routes/user');
 app.use('/*/user', user);
 
