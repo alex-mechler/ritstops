@@ -44,13 +44,11 @@ router.post('/', auth.isLoggedIn, async(req, res) => {
 		return;
 	}
 	var {rows} = await db.query('SELECT COUNT(id) FROM quest_reward WHERE quest_id=$1 AND reward_id=$2', [quest, reward]);
-	console.log(rows[0]['count'] != 1);
 	if(rows[0]['count'] != 1) {
 		res.send({err: true, message: 'Invalid Reward for that Quest', result: {}});
 		return;
 	}
 	var {rows} = await db.query('SELECT reward_id FROM report WHERE stop_id=$1 AND user_id=$2', [stop, req.user.id]);
-	console.log(rows);
 	if(rows[0] !== undefined && (Number(rows[0]['reward_id']) != 0 || (Number(rows[0]['reward_id'] == 0 && reward == 0)))) {
 		res.send({err: true, message: 'You have already reported that stop!', result: {}});
 		return;
