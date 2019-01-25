@@ -492,9 +492,9 @@ quests = [
     "icon": "icon_spinda"
   },
   {
-    "reward": "Bidoof",
+    "reward": "Bidoof / Voltorb",
     "quest": "Make 5 Nice Throws",
-    "icon": "icon_bidoof"
+    "icon": "icon_grass"
   },
   {
     "reward": "Onix",
