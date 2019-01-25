@@ -24,7 +24,7 @@ router.post('/preferences', auth.isLoggedIn, async(req, res) => {
 		res.send({err:true, message: 'Invalid preferences', result: {}});
 		return;
 	} else {
-		await db.query('UPDATE discord_user SET preferences=$1 WHERE email=$1', [req.body.preferences, req.user.email]);
+		await db.query('UPDATE discord_user SET preferences=$1 WHERE email=$2', [req.body.preferences, req.user.email]);
 		const {rows} = await db.query('SELECT preferences FROM discord_user WHERE email=$1', [req.user.email]);
 		if(rows.length == 1) {
 			res.send({err: false, message: '', result: rows[0]});
