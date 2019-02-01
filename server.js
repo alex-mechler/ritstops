@@ -33,6 +33,13 @@ cron.schedule('0 0 * * *', () => {
    timezone: process.env.TIMEZONE
 });
 
+cron.schedule('0 16 1 * *', () => {
+  console.log('Resetting the seasonal highscores');
+	db.query('UPDATE discord_user SET seasonal_score=0');
+}, {
+   timezone: process.env.TIMEZONE
+});
+
 passport.use(new DiscordStrategy({
 	clientID: process.env.DISCORD_CLIENT_ID,
 	clientSecret: process.env.DISCORD_CLIENT_SECRET,
@@ -70,6 +77,9 @@ app.use('/*/quest', quest);
 
 const user = require('./api/routes/user');
 app.use('/*/user', user);
+
+const leaderboard = require('./api/routes/leaderboard');
+app.use('/*/leaderboard', leaderboard);
 
 app.get('/*/auth/login', passport.authenticate('discord', {scope: scopes}), function(req, res) {});
 

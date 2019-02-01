@@ -31,7 +31,7 @@ router.post('/', auth.isLoggedIn, async(req, res) => {
 		return;
 	}
 	await db.query('UPDATE stop SET quest_id = $1 WHERE id = $2', [quest, stop]);
-	await db.query("UPDATE discord_user SET score = score + 1 WHERE email=$1", [req.user.email]);
+	await db.query("UPDATE discord_user SET score = score+1, seasonal_score=seasonal_score+1 WHERE email=$1", [req.user.email]);
 	var {rows} = await db.query('SELECT stop.name, stop.loc, quest.reward, quest.quest, stop.confirmed FROM stop JOIN quest ON stop.quest_id = quest.id WHERE stop.id = $1', [stop]);
 	res.send({err: false, message: '', result: rows});
 });

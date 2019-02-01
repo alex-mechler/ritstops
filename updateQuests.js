@@ -526,7 +526,9 @@ quests = [
 updateQuests();
 
 async function updateQuests(){
-  await db.query("DROP TABLE stop,quest");
+  try{
+    await db.query("DROP TABLE stop,quest");
+  }catch(e){}
   await db.query("CREATE TABLE quest (id SERIAL PRIMARY KEY, reward VARCHAR(50), quest VARCHAR(100), icon VARCHAR(100))");
   await db.query("CREATE TABLE stop (id SERIAL PRIMARY KEY, name VARCHAR(50), loc POINT, quest_id INT DEFAULT 1, confirmed BOOLEAN DEFAULT FALSE, FOREIGN KEY (quest_id) REFERENCES quest(id))");
 	for(i in quests){
