@@ -507,19 +507,9 @@ quests = [
     "icon": "icon_larvitar"
   },
   {
-    "reward": "1000 SD",
-    "quest": "Hoenn Celebration: Catch 10 Zigzagoon or Taillow",
-    "icon": "icon_stardust"
-  },
-  {
-    "reward": "Nosepass",
-    "quest": "Hoenn Celebration: Hatch 2 Eggs",
-    "icon": "icon_nosepass"
-  },
-  {
-    "reward": "Trapinch",
-    "quest": "Hoenn Celebration: Evolve 3 Wurmple",
-    "icon": "icon_trapinch"
+    "reward": "Chimchar",
+    "quest": "Trade 10 Pokemon",
+    "icon": "icon_chimchar"
   }
 ];
 
