@@ -11,6 +11,6 @@ router.get('/', async(req, res) => {
 });
 
 router.get('/seasonal', async(req, res) => {
-	const {rows} = await db.query('SELECT username, seasonal_score, avatar, discord_id FROM discord_user WHERE visible != FALSE AND seasonal_score > 0 ORDER BY seasonal_score DESC');
+	const {rows} = await db.query('SELECT username, seasonal_score AS score, avatar, discord_id FROM discord_user WHERE visible != FALSE AND seasonal_score > 0 ORDER BY seasonal_score DESC');
 	res.send({err: false, message: '', result: rows});
 });
