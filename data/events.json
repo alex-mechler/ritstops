@@ -1,14 +1,8 @@
 [
   {
-    "start": 1553958000,
-    "end": 1553990400,
-    "key": "201904lotad",
-    "show_default": false
-  },
-  {
-    "start": 1554235200,
-    "end": 1554840000,
-    "key": "201904bug",
+    "start": 1555444800,
+    "end": 1556049600,
+    "key": "201904egg",
     "show_default": true
   }
 ]
