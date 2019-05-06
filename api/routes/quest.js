@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
         filter = eventManager.includeDefault ? `(${inStatement} OR event IS NULL)` : inStatement;
     }
 
-    const sqlStatement = `SELECT id, reward, quest, icon FROM quest WHERE ${filter} ORDER BY quest ASC`;
+    const sqlStatement = `SELECT id, reward, quest, icon, shiny FROM quest WHERE ${filter} ORDER BY quest ASC`;
 
     const {rows} = await db.query(sqlStatement);
     res.send({err: false, message: '', result: rows});
